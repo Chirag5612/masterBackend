@@ -96,7 +96,7 @@ const Dashboard = () => {
 
             <div className="site-card-border-less-wrapper">
                
-               <h1 className="px-2">
+               <h1 className="px-2 text-align-center">
                     Hello Dashboard
                 </h1>
                
@@ -109,7 +109,7 @@ const Dashboard = () => {
                         >
                             <h3>
                                 {dashboardData.activeCustomer}
-                                /
+                                Active Customer
                                 {dashboardData.allCustomer}
 
                             </h3>
@@ -123,7 +123,7 @@ const Dashboard = () => {
                         >
                             <h3>
                                 {dashboardData.activeServiceProvider}
-                                /
+                                Active Provider
                                 {dashboardData.allServiceProvider}
 
                             </h3>
@@ -137,7 +137,7 @@ const Dashboard = () => {
                         >
                             <h3>
                                 {dashboardData.currentMonthErning}
-                                /
+                                Earning
                                 {dashboardData.currentMonthErningTotal}
 
                             </h3>

@@ -12,7 +12,7 @@ const FooterPage = () => {
                 bottom: "0"
             }}
         >
-            Ant Design ©{date} Created by Ant UED
+            eBiztrait ©{date} Created by eBiztrait Technology
         </Footer>
     )
 

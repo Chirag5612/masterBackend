@@ -37,12 +37,6 @@ const Index = () => {
     const navigate = useNavigate();
     const { Content } = Layout;
     let currentFilterText = '';
-    // if (dataTableData && dataTableData.length > 0) {
-    //     dataTableData.map(async (item, i) => {
-    //         console.log(item)
-    //         addAllFirebaseUser(item)
-    //     })
-    // }
     useEffect(() => {
         getData();
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -55,8 +49,8 @@ const Index = () => {
         await Http.get(process.env.REACT_APP_BASE_URL + url.user_get + options)
             .then((response) => {
                 setLoading(false);
-                setDataTableData(response.data.data.docs);
-                setTotalRows(response.data.data.total);
+                setDataTableData(response.data.data.docs || []);
+                setTotalRows(response.data.data.total || []);
             })
             .catch((error) => {
                 if (error.response) {

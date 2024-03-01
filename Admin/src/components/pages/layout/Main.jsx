@@ -8,13 +8,18 @@ import NotificationFcm from './NotificationFcm';
 import { Outlet } from 'react-router-dom';
 
 const Main = (props) => {
-    const { Content } = Layout;
 
+    console.log('props', props);
+
+    const [collapsed, setCollapsed] = useState(false);
+    const { Content } = Layout;
+    
     const { ptitle } = props;
     useEffect(() => {
         document.title = process.env.REACT_APP_APP_NAME + ' ' + ptitle;
     }, [ptitle]);
-
+    
+    // console.log('collapsed in main component', collapsed);
 
     useEffect(() => {
         const isLogin = localStorage.getItem("accessToken") || false;
@@ -42,7 +47,7 @@ const Main = (props) => {
                 {/* site-layout-main-div */}
                 <Layout className="site-layout">
                     <div className="main-section-side">
-                        <Header />
+                        <Header collapsed={collapsed} />
                         <Content
                             style={{
                                 margin: '0 16px',

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Layout, Menu, Image } from "antd";
+import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
+import { Layout, Menu, Image, Button } from "antd";
 import { useNavigate } from "react-router-dom";
 import {
     HomeOutlined,
@@ -25,10 +26,13 @@ import {
     UngroupOutlined,
     CloseCircleOutlined
 } from '@ant-design/icons';
-import logo from '../../../assets/images/mm-logo-1.png'
 
+// import logo from '../../../assets/images/mm-logo-1.png'
+import logo from '../../../assets/images/logoEbiztrait.png'
 const Sidebar = () => {
     const [collapsed, setCollapsed] = useState(false);
+    const [darkTheme, setDarkTheme] = useState(true);
+
     const { Sider } = Layout;
     const navigate = useNavigate();
     const onMenuClick = (event) => {
@@ -36,15 +40,19 @@ const Sidebar = () => {
         navigate(key)
     }
 
+    const toggleTheme = () => {
+        setDarkTheme(!darkTheme);
+    }
+
 
     useEffect(() => {
-        if(collapsed){
-          document.body.classList.add('hasOpen')
+        if (collapsed) {
+            document.body.classList.add('hasOpen')
         }
         else {
-          document.body.classList.remove('hasOpen')
+            document.body.classList.remove('hasOpen')
         }
-      }, [collapsed])
+    }, [collapsed])
 
     const commonChildrenArray = [
 
@@ -120,7 +128,8 @@ const Sidebar = () => {
     ];
 
     return <>
-          <Sider
+        <Sider
+            theme={darkTheme ? 'dark' : 'light'}
             style={{
                 overflow: 'auto',
                 height: '100vh',
@@ -130,8 +139,10 @@ const Sidebar = () => {
                 bottom: 0,
                 background: "linear-gradient(50deg, #0376BC 50%, #00C4E6 100%)"
             }}
+
+
             // className="my-sidermenu-color sidebar-scroll-manage h-auto" 
-            collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} id="sidebar_scroll"
+            collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} id="sidebar_scroll" trigger={null}
         >
             <div className="logo" >
                 <Image src={logo} alt='' preview={false} />
@@ -141,9 +152,20 @@ const Sidebar = () => {
                 className="my-sidermenu-color"
                 onClick={onMenuClick}
                 items={items}
-                style={{ minWidth: 0, flex: "auto",paddingBottom:40 }}
+                style={{ minWidth: 0, flex: "auto", paddingBottom: 40 }}
                 theme={{ textColor: '#fff' }}
+                // theme={darkTheme ? 'dark' : 'light'}
             />
+            {/* <ToggleThemeButton darkTheme={darkTheme} toggleTheme={toggleTheme} /> */}
+            <Button
+                id='toggle-bar'
+                className='toggle position-button'
+                style={{ background: 'black !important'}}
+                type='text'
+                icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+                onClick={() => setCollapsed(!collapsed)}
+            >
+            </Button>
         </Sider>
     </>
 

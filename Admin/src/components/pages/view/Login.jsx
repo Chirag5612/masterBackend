@@ -43,10 +43,16 @@ const Login = () => {
 
     const onSubmit = async (data) => {
         setIsLoading(true);
+        // localStorage.setItem(
+        //     "accessToken",
+        //     true
+        //     //data.access_token
+        // );
         await Http
             .post(process.env.REACT_APP_BASE_URL + url.login, data)
             .then((response) => {
                 let data = response.data.data;
+                console.log('response.data.data', response.data.data);
                 localStorage.setItem(
                     "accessToken",
                     data.access_token

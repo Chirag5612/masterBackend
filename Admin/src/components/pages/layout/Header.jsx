@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Layout, Row, Button } from 'antd';
-import { AppstoreOutlined, LogoutOutlined, ProfileOutlined, WechatOutlined } from '@ant-design/icons';
+import { AppstoreOutlined, LogoutOutlined, ProfileOutlined, WechatOutlined, MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
 import profileIamge from '../../../assets/images/dummy-profile-pic.jpg'
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { BiChevronDown } from 'react-icons/bi'
+import ToggleThemeButton from "./ToggleThemeButton";
+
 
 const { Header } = Layout;
 const HeaderPage = () => {
 
+    // const [darkTheme, setDarkTheme] = useState(true);
     const [profilePic, setProfilePic] = useState(profileIamge);
     const [name, setName] = useState('');
 
@@ -23,13 +26,18 @@ const HeaderPage = () => {
         if (JSON.parse(localStorage.getItem('profile'))) {
 
             if (JSON.parse(localStorage.getItem('profile')).profile_photo) {
-                setProfilePic(JSON.parse(localStorage.getItem('profile')).profile_photo)
+                setProfilePic(JSON.parse(localStorage.getItem('profile')).profile_photo);
             }
-            setName(JSON.parse(localStorage.getItem('profile')).first_name)
-
+            setName(JSON.parse(localStorage.getItem('profile')).first_name);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    // const toggleTheme = () => {
+    //     setDarkTheme(!darkTheme);
+    //     localStorage.setItem('dark', 'true');
+    // }
+
 
     const childrenArray = [
         {
@@ -79,6 +87,7 @@ const HeaderPage = () => {
             </div>,
             key: 'submenu',
             children: childrenArray,
+            className: 'menu-list-bg'
         },
     ];
 
@@ -89,8 +98,7 @@ const HeaderPage = () => {
 
                 </Col>
 
-                <Col span={21}
-                >
+                <Col span={21}>
                     <div className='profile-menu ant-layout-header'>
                         {/* <img
                             className="profile-img-icon"
@@ -100,6 +108,16 @@ const HeaderPage = () => {
                         <Menu mode="horizontal" onClick={onMenuClick} items={items} />
                     </div>
                 </Col>
+                {/* <Button
+                    id='toggle-bar'
+                    className='toggle position-button'
+                    type='text'
+                    icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+                    onClick={() => setCollapsed(!collapsed)}
+                    >
+
+                </Button> */}
+                 {/* <ToggleThemeButton darkTheme={darkTheme} toggleTheme={toggleTheme} /> */}
             </Row>
         </Header>
     )

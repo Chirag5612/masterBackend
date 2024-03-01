@@ -1,5 +1,6 @@
 .App {
     text-align: center;
+    background-color: var(--background-color);
 }
 
 body {
@@ -28,6 +29,7 @@ body {
     left: 22rem;
     top: 3rem;
 }
+
 .position-right {
     position: absolute;
     right: 20rem;
@@ -92,7 +94,20 @@ code {
         monospace;
 }
 
+.position-button {
+    /* margin-left: 10rem;
+    margin-top: -2rem; */
+    position: fixed;
+    left: 14rem;
+    top: 1rem;
+}
 
+.position-dark-mode-button {
+
+    position: fixed;
+    top: 5rem;
+    right: 11rem;
+}
 /*  Add here All Custom Css */
 
 .login-form {
@@ -199,9 +214,8 @@ i.ant-menu-submenu-arrow {
     height: 70px;
     margin: 16px;
     color: #fff;
-    /* background: rgba(255, 255, 255, 0.3); */
+    padding-top: 30px;
 }
-
 
 
 .menu-style-custome {
@@ -256,47 +270,58 @@ i.ant-menu-submenu-arrow {
     width: 100%;
     left: 0;
     z-index: 98;
+    background: white;
 }
 
 aside.ant-layout-sider {
-    /* top: 0; */
     position: fixed;
     left: 0;
     z-index: 99;
-    /* position: fixed;
-    left: 0;
-    z-index: 99; */
 }
 
-.ant-layout-content {
-    /* padding-left: 200px; */
-}
+/* .ant-layout-content {
+    padding-left: 200px;
+} */
 
 .site-layout-background {
-    /* padding: 0 20px 0 220px; */
     padding-top: 65px;
 }
 
 .my-header-color {
-    background: linear-gradient(90deg, #0376BC 0%, #00C4E6 100%) !important;
-    color: #fff !important;
+    /* background: rgb(2,0,36);*/
+    background: white;
+    /* background: darkgray; */
 }
 
-/* .ant-menu-submenu-open, */
-.ant-menu-sub.ant-menu-inline,
-.my-sidermenu-color {
-    background: linear-gradient(50deg, #0376BC 50%, #00C4E6 100%) !important;
-    color: #fff !important;
+.ant-layout-sider-children {
+    /* background: lightgrey;
+     */
+     background: #3c4b64;
+    border-right-style: solid;
+    border-radius: 0px 20px 20px 0px;
 }
+
+.ant-card {
+    background: white;
+    border-radius: 20px;
+}
+/* .ant-menu-submenu-open, */
+/* .ant-menu-sub.ant-menu-inline,
+.my-sidermenu-color {
+    background: gray; rgb(2,0,36);
+    background: white;
+} */
 
 .my-sider-color,
 .ant-layout-sider-trigger {
-    background: #0376BC !important;
+    background: white !important;
+    /* #0376BC */
     color: #fff !important;
 }
 
 .ant-layout-sider-trigger {
-    background: #0376BC !important;
+    background: white !important;
+    /* #0376BC */
     color: #fff !important;
 }
 
@@ -304,10 +329,34 @@ aside.ant-layout-sider {
 .my-sider-color>.ant-menu-item-selected,
 :where(.css-dev-only-do-not-override-ixblex).ant-menu-light .ant-menu-submenu-selected>.ant-menu-submenu-title {
     color: #fff !important;
+    background: white;
 }
 
 .ant-menu-item-selected {
-    background: linear-gradient(90deg, #00C4E6 0%, #0376BC 100%) !important;
+    /* background: linear-gradient(90deg, #00C4E6 0%, #0376BC 100%) !important; */
+    background: gray;
+}
+
+.ant-menu-dark {
+    background: white;
+}
+
+.ant-menu-title-content {
+    /* color: black
+     */
+    color: white;
+}
+
+.ant-menu-sub {
+    background: darkgray;
+}
+
+.ant-layout-footer {
+    background: white;
+}
+
+.ant-menu-item {
+    background: #3c4b64 !important;
 }
 
 .ant-menu-light .ant-menu-item-active,
@@ -476,6 +525,10 @@ aside.ant-layout-sider {
     margin: 10px 10px 10px 0;
 }
 
+.text-align-center {
+    text-align: center;
+}
+
 /* // responsive  */
 
 .min-w-160 {
@@ -491,24 +544,20 @@ aside.ant-layout-sider {
 
 }
 
-/* section.ant-layout.site-layout-main-div.css-dev-only-do-not-override-ixblex {
-    height: 713px;
-    overflow: scroll;
-} */
-#sidebar_scroll {
-    /* flex: 0 0 200px;
+/* #sidebar_scroll {
+    flex: 0 0 200px;
     max-width: 200px;
     min-width: 200px;
     width: 200px;
     max-height: 200vh;
     overflow: scroll;
-    height: 200vh; */
+    height: 200vh;
 
-    /* max-height: 713px;
+    max-height: 713px;
     overflow: scroll;
-    height: 100%; */
-    /* background-color: #000; */
-}
+    height: 100%;
+    background-color: #000;
+} */
 
 /* section.ant-layout.site-layout-main-div.css-dev-only-do-not-override-ixblex { */
 .site-layout-main-div {
@@ -557,13 +606,6 @@ aside.ant-layout-sider {
 
 /* Scroll  issue manage end */
 
-
-
-
-
-
-
-
 @media screen and (max-width:525px) {
     .site-layout-background {
         padding: 0 0 0 20px;
@@ -601,12 +643,3 @@ aside.ant-layout-sider {
         width: 33.33%;
     }
 }
-
-/* @media only screen and (width: 1024px) and (height: 1366px),
-only screen and (width: 1024px) and (height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait),
-only screen and (width: 1366px) and (height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)
-{
-    .site-layout-vh{
-        height: 100vh !important;
-        max-height: 100vh !important;
-    }} */

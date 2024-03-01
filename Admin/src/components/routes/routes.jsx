@@ -31,8 +31,6 @@ import OurContactUs from "../pages/view/ourContactUs/Index";
 import Chat from "../pages/view/chat/Index";
 import ChatDetail from "../pages/view/chat/detail";
 const routes = [
-    
-
     {
         path: "/chat",
         exact: true,
