@@ -279,49 +279,55 @@ aside.ant-layout-sider {
     z-index: 99;
 }
 
-/* .ant-layout-content {
-    padding-left: 200px;
+/* .ant-card-head {
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: -24px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    opacity: 1;
+    background:  linear-gradient(195deg, #49a3f1, #1A73E8);
+    color: #344767;
+    border-radius: 0.5rem;
+    box-shadow: 0rem 0.25rem 1.25rem 0rem rgba(0, 0, 0, 0.14), 0rem 0.4375rem 0.625rem -0.3125rem rgba(0, 187, 212, 0.4);
 } */
+
+.heading-text-color {
+    color: white !important
+}
 
 .site-layout-background {
     padding-top: 65px;
 }
 
 .my-header-color {
-    /* background: rgb(2,0,36);*/
     background: white;
-    /* background: darkgray; */
 }
 
 .ant-layout-sider-children {
-    /* background: lightgrey;
-     */
-     background: #3c4b64;
-    border-right-style: solid;
-    border-radius: 0px 20px 20px 0px;
+    background: linear-gradient(195deg, #42424a, #191919);
+    border-radius: 10px;
+}
+
+.ant-menu-item-icon {
+    color: white !important;
 }
 
 .ant-card {
     background: white;
     border-radius: 20px;
 }
-/* .ant-menu-submenu-open, */
-/* .ant-menu-sub.ant-menu-inline,
-.my-sidermenu-color {
-    background: gray; rgb(2,0,36);
-    background: white;
-} */
 
 .my-sider-color,
 .ant-layout-sider-trigger {
     background: white !important;
-    /* #0376BC */
     color: #fff !important;
 }
 
 .ant-layout-sider-trigger {
     background: white !important;
-    /* #0376BC */
     color: #fff !important;
 }
 
@@ -333,7 +339,6 @@ aside.ant-layout-sider {
 }
 
 .ant-menu-item-selected {
-    /* background: linear-gradient(90deg, #00C4E6 0%, #0376BC 100%) !important; */
     background: gray;
 }
 
@@ -342,8 +347,6 @@ aside.ant-layout-sider {
 }
 
 .ant-menu-title-content {
-    /* color: black
-     */
     color: white;
 }
 
@@ -382,7 +385,6 @@ aside.ant-layout-sider {
     background: #0376BC !important;
     border: none !important;
     margin: 0 9px 2px 9px;
-    ;
 }
 
 .my-submit-button {
@@ -590,10 +592,11 @@ aside.ant-layout-sider {
 }
 
 
-
 /* Scroll  issue manage start */
 #sidebar_scroll {
     position: fixed;
+    padding: 10px;
+    background: white !important;
 }
 
 .main-section-side {

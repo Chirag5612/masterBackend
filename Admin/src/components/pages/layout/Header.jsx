@@ -12,7 +12,7 @@ import ToggleThemeButton from "./ToggleThemeButton";
 const { Header } = Layout;
 const HeaderPage = () => {
 
-    // const [darkTheme, setDarkTheme] = useState(true);
+    const [darkTheme, setDarkTheme] = useState(true);
     const [profilePic, setProfilePic] = useState(profileIamge);
     const [name, setName] = useState('');
 
@@ -33,10 +33,10 @@ const HeaderPage = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    // const toggleTheme = () => {
-    //     setDarkTheme(!darkTheme);
-    //     localStorage.setItem('dark', 'true');
-    // }
+    const toggleTheme = () => {
+        setDarkTheme(!darkTheme);
+        localStorage.setItem('dark', 'true');
+    }
 
 
     const childrenArray = [

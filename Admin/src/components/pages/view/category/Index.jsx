@@ -256,7 +256,7 @@ const Index = () => {
                 <div className="page-card-view">
                     <Card>
                         <CardHeader className="card-header-part">
-                            <h5>Category List</h5>
+                            <p className='heading-text-color'>Category List</p>
                             <div className="card-header-action ml-3">
                                 <div className="d-flex justify-content-end">
                                     <div className="form-group mb-0 mr-3">

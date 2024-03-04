@@ -96,11 +96,11 @@ const Dashboard = () => {
 
             <div className="site-card-border-less-wrapper">
                
-               <h1 className="px-2 text-align-center">
+               {/* <h1 className="px-2 text-align-center">
                     Hello Dashboard
-                </h1>
+                </h1> */}
                
-                {/* <Row>
+                <Row>
                     <Col span={8} className="min-w-160">
                         <Card
                             title="Customers Count (Active/Total)"
@@ -109,7 +109,7 @@ const Dashboard = () => {
                         >
                             <h3>
                                 {dashboardData.activeCustomer}
-                                Active Customer
+                                {/* Active Customer */}
                                 {dashboardData.allCustomer}
 
                             </h3>
@@ -123,7 +123,7 @@ const Dashboard = () => {
                         >
                             <h3>
                                 {dashboardData.activeServiceProvider}
-                                Active Provider
+                                {/* Active Provider */}
                                 {dashboardData.allServiceProvider}
 
                             </h3>
@@ -137,7 +137,7 @@ const Dashboard = () => {
                         >
                             <h3>
                                 {dashboardData.currentMonthErning}
-                                Earning
+                                {/* Earning */}
                                 {dashboardData.currentMonthErningTotal}
 
                             </h3>
@@ -150,7 +150,7 @@ const Dashboard = () => {
 
                     <div className="d-flex">
                         <h1 className="p-2 px-2">
-                            Service Request Overall Status
+                            {/* Service Request Overall Status */}
                             <span className="pl-1 text-secondary">
                                 {` (as of now)`}
                             </span>
@@ -243,7 +243,7 @@ const Dashboard = () => {
                         </h1>
                         <Table dataSource={monthlyActivity} columns={columns} rowKey={"inedx"} />
                     </div>
-                </Card> */}
+                </Card>
             </div>
         </Content >
     )

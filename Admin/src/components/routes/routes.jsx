@@ -169,6 +169,14 @@ const routes = [
         auth: true,
         component: <Dashboard title="Dashboard" />
     },
+    // {
+    //     type: "collapse",
+    //     name: "Dashboard",
+    //     key: "dashboard",
+    //     icon: <Icon fontSize="small">dashboard</Icon>,
+    //     route: "/dashboard",
+    //     component: <Dashboard />,
+    //   },
     {
         path: "/login",
         exact: true,
